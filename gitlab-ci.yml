@@ -13,8 +13,6 @@ before_script:
 
 eslint:
   stage: lint
-  tags:
-    - docker
   script:
     - ./node_modules/eslint/bin/eslint.js .
   allow_failure: true
