@@ -23,11 +23,10 @@ eslint:
     - ./node_modules/eslint/bin/eslint.js .
   allow_failure: true
 
-  publish:
-    image: docker:latest
-    stage: publish
-    services:
-      - docker:bind
-    script:
-      - docker build -t $TAG_COMMIT -t $TAG_LATEST .
-      
+publish:
+  image: docker:latest
+  stage: publish
+  services:
+    - docker:bind
+  script:
+    - docker build -t $TAG_COMMIT -t $TAG_LATEST .
