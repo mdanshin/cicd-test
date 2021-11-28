@@ -9,17 +9,15 @@ variables:
   TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
   TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
 
-before_script:
-  - npm install
-  - npm install -g eslint
-  - npm install eslint-config-standard
-  - npm install eslint-plugin-import
-  - npm install eslint-plugin-node
-  - npm install eslint-plugin-promise
-
 eslint:
   stage: lint
   script:
+    - npm install
+    - npm install -g eslint
+    - npm install eslint-config-standard
+    - npm install eslint-plugin-import
+    - npm install eslint-plugin-node
+    - npm install eslint-plugin-promise
     - ./node_modules/eslint/bin/eslint.js .
   allow_failure: true
 
