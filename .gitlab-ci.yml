@@ -24,7 +24,5 @@ eslint:
 publish:
   image: docker:latest
   stage: publish
-  services:
-    - docker:stable-dind
   script:
     - docker build -t $TAG_COMMIT -t $TAG_LATEST .
