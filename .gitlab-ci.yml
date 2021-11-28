@@ -24,7 +24,6 @@ eslint:
   allow_failure: true
 
 publish:
-  image: docker:latest
   stage: publish
   services:
     - docker:bind
