@@ -25,6 +25,6 @@ publish:
   image: docker:latest
   stage: publish
   variables:
-  DOCKER_HOST: tcp://localhost:2375/
+    DOCKER_HOST: tcp://localhost:2375/
   script:
     - docker build -t $TAG_COMMIT -t $TAG_LATEST .
