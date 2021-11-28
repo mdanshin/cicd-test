@@ -11,6 +11,7 @@ services:
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '443:443'
+      - '5050:5050'
     volumes:
       - '/srv/gitlab/config:/etc/gitlab'
       - '/srv/gitlab/logs:/var/log/gitlab'

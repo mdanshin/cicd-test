@@ -2,6 +2,8 @@ image: node
 
 stages:
  - lint
+  - publish
+  - deploy
 
 before_script:
   - npm install
@@ -16,3 +18,7 @@ eslint:
   script:
     - ./node_modules/eslint/bin/eslint.js .
   allow_failure: true
+
+variables:
+  TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
+  TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
